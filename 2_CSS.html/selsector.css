@@ -1,0 +1,114 @@
+/* 속성 선택자*/
+
+/*  모든 div태그들 중 name속성값이 name1과 "일치"하는 요소*/
+div[name =name1]{
+    background-color: orangered;
+}
+/*
+ 선택자[속성~= 속성값] : 속성의 "포함"(단어로써)
+ DIV 태그 중 NAMe 속성값에 name1이 "포함"되어 있는 요소를 선탣
+
+*/
+div[name~=name1]{
+    background-color: yellow;
+}
+/*
+    선택자[속성|=속성값]: 속성의 시작을 검사(-앞에 한 단어기준)
+    div중 class 속성ㄱ밧이 div로 시작되는 요소를 선택
+*/
+div[class|=div]{
+    background-color: aquamarine;
+}
+/*
+     선택자[속성$=속성값]: 속성의 시작값을 검사
+     div wnd name의 ㄱ밧이 na로 "시작"되는 요소를 선택
+     */
+     div[name^=na]{
+        background-color: blueviolet;
+     }
+/*
+    선택자[속성$=속성값]: 속성값이 뭘로 "끝나는지" 검사
+    div 중 class속성값이 ss로 끝나는 요소 선택
+    */
+    div[class$=ss]{
+        background-color: aliceblue;
+    }
+    /*선택자[속성*=속성값] : 
+    div 중 class 속성값에 i 가 "포함"되어 있는 요소 선택
+    */
+    div[class*=i]{
+        background-color: brown;
+        color: blanchedalmond;
+    }
+    /*
+    class  속성 값이 div-class 애ㅑ들중 이름에 3이 ㅇ;ㅆ는 요소
+    */
+    
+    .div-class[name~=name3]{
+        background-color: blueviolet;
+    }
+    div[class=div-class][name~=name3]{
+        background-color: aqua;
+    }
+    /*
+    2. 자손 선택자와 후손선택자
+        a > b : a 요소의 자손들 중 b 요소들 선택
+        */
+        #test1 > h4{
+            background-color: orangered;
+        }
+        
+        #test1 > ul> li {
+            background-color: darkcyan;
+        }
+        /*
+        a b : a 요소의 후손들중 b요소만 선택
+        */
+        #test1 li{
+            color: tomato;
+            background-color: blueviolet;
+        }
+        /*3. 동위선택자 */
+        /*a+b : a요소 뒤의 b요소 하나만을 선택*/
+        #test2+div{
+            background-color: yellow;
+        }
+        /*바로뒤의 요소가 아니기 때문에 반영되지 않는다.*/
+        #test2+ul{
+            background-color: blueviolet;
+        }
+        /*a~b : a 요소 뒤에 모든 b요소 다 선탯*/
+        /*#test2~div{
+            /* background-color: greenyellow; 
+        #test2~ul{
+            background-color: pink;
+        }*/
+        /*4. 반응선택자*/
+        /* .area{
+            background-color: chartreuse;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        } */
+        #active-test:active{
+            background-color: crimson;
+            color: darkgoldenrod;
+        }
+        #hover-test:hover{
+            background-color: aquamarine;
+            color: blueviolet;
+        }
+        /*
+        5. 상태 선택자
+        */
+        input[type=checkbox]:checked{
+            width: 20px;
+            height: 20px;
+        }
+        input[type=checkbox]:checked+label{
+            font-size: 20px;
+        }
+
+        input:focus{
+            background-color: pink;
+        }
