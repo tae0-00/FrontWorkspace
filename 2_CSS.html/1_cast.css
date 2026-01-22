@@ -1,0 +1,15 @@
+/*
+Css  작성 영역
+*/
+p,
+pre{
+    color:brown;
+}
+
+button :enabled{
+    background-color: peru;
+}
+
+button :disabled{
+    background-color: brown;
+}

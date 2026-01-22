@@ -1,0 +1,31 @@
+.yellow{
+    background-color: yellow;
+}
+.child{
+    color: red;
+}
+.grandch{
+    color: pink;
+}
+.text{
+    border: 1px solid blue;
+}
+.pwd{
+     border: 1px solid blue;
+}
+.title{
+    color: green;
+    font-size: 20px;
+}
+div[class^=user]{
+    background-color: lightgrey;
+}
+div[class|=admin]{
+    background-color: greenyellow;
+}
+div[class$=info]{
+    color: red;
+}
+div[class~=product]{
+    background-color: coral;
+}

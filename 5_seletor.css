@@ -1,0 +1,21 @@
+
+/*2 순위 : 인라인(내부) 속성 
+
+/*3 순위 : 아아디 선택자*/
+#test1{
+    height: 100;
+    background-color: black;
+    color: yellowgreen;
+}
+
+/*4순위 :  클래스 선택자*/
+.cls1{
+    background-color: aqua;
+}
+
+/*5순위 : 태그선택ㅂ자*/
+div{
+    width: 200px;
+    height: 200px;
+    background-color: tomato !important;/*1순위 important*/
+}

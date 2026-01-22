@@ -1,0 +1,64 @@
+/* 일반ㅅ구조 선택자
+형제 : first-child : 형제 자매관게의 요소중 첫번째 요소를 선택*/
+#test1>p:first-child{
+    background-color: brown;
+    color: blue;
+}
+/*
+    :last-child : 형제 관게의 요소ㅜㅇ 마지막 요소를 선택
+    */
+    #test1> pre:last-child{/*뜨ㅣ어쓰기 잘못하면 안됨*/
+        background-color: aquamarine;
+    }
+    /* 
+    :nth-child(수열) : 형제 관계 요소 중 지정된 수열번때 요솧를 모두 선택하는 선택자*/
+    #test1> p:nth-child(2){/*명시도를 높이기 위해 p를 써주는게 좋음*/
+        background-color: burlywood;
+    }
+
+    /*짝수번째 p태그 요소 선택 방법*/
+    #test1>p:nth-child(2n){
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+    /*even 짝수 odd 홀수 */
+    #test1> p:nth-child(odd){
+        border: 1px solid rgb(66, 12, 12);
+    }
+    /* : :nth-last-child(슈열)
+        - 형제관계 요소 중 "뒤에서부터" 지정된 수열번째 요소를 선택
+        */
+        #test1>p:nth-last-child(2){
+            background-color: blueviolet;
+        }
+        /*2. 형태구조 선택자*/
+        /*:first-of-type : "같이 선택된 형제요소들 중 첫번쨰 요소*/
+        #test2 >p:first-of-type{
+            background-color: orange;
+        }
+
+        #test2 > pre:first-of-type{
+            background-color: blue;
+        }
+        /* :last-of-type*/
+        #test2>p:last-of-type{
+            background-color: cadetblue;
+        }
+        /*:nth-of-type*/
+        #test2>p:nth-of-type(2n){
+            font-size: 30px;
+        }
+        /* :nth-last-of-type*/
+        #test2> p:nth-last-of-type(odd){
+            background-color: brown;
+        }
+        /*부정선택자
+        #test3의 자식 li요소들 중에 3의 배수를 제외한 나머지 요소만 선택*/
+        #test3>li:nth-of-type(3n){
+            background-color: palevioletred;
+        }
+        #test3> li:not(li:nth-of-type(3n)){
+            background-color: rgb(171, 216, 112);
+        }
+        

@@ -20,7 +20,7 @@ div[class|=div]{
     background-color: aquamarine;
 }
 /*
-     선택자[속성$=속성값]: 속성의 시작값을 검사
+     선택자[속성^=속성값]: 속성의 시작값을 검사
      div wnd name의 ㄱ밧이 na로 "시작"되는 요소를 선택
      */
      div[name^=na]{
@@ -112,3 +112,4 @@ div[class|=div]{
         input:focus{
             background-color: pink;
         }
+       
