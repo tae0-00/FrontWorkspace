@@ -29,3 +29,24 @@ div[class$=info]{
 div[class~=product]{
     background-color: coral;
 }
+.testbox:hover{
+    background-color: green;
+}
+.testbox:focus{
+    background-color: yellow;
+}
+#container7>.front-weight:nth-child(3){
+    font-weight: bold;
+}
+#cotainer8>p:only-child{
+    color: aqua;
+}
+#container8>p:only-of-type{
+    color: blue;
+} 
+[title*=important]:not([title*=not-important]){
+    background-color: red;
+}
+#menu>.active:active{
+    color: red;
+}
