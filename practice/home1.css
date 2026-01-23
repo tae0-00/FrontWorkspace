@@ -1,4 +1,4 @@
-.yellow{
+.highlight{
     background-color: yellow;
 }
 .child{
@@ -38,7 +38,7 @@ div[class~=product]{
 #container7>.front-weight:nth-child(3){
     font-weight: bold;
 }
-#cotainer8>p:only-child{
+#container8>p:only-child{
     color: aqua;
 }
 #container8>p:only-of-type{
