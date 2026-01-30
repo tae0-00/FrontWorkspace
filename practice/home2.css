@@ -50,6 +50,15 @@
 .h2{
     height: 30px;
     display: flex;
+
+    position: sticky;
+    top:0;
+    /*
+sticky 
+-스크린이 임계점에 도달햇을때 화면에 스티커처럼 요소를 붙이는 속성
+-평소에는 기본 포지션상태를 유지하다가, 임계점 도달시 fixed로 변경돈다
+-top, bottom, left
+    */
 }
 .h2>div{
     border: 0px;
@@ -93,8 +102,9 @@
 }
 .h3>div:nth-child(1){
     width: 80%;
+    
 }
 .h3>div:nth-child(2){
     width: 20%;
 }
-.
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---
+        시멘틱태그(sematic Tag)
+        -단순 태그 재치를 넘어 의미있는 웹을 만들 수 있게히는 태그
+        -기존영역 태그 분할에 주로 사용되던 div 태그의 이름만 봤을때 , 나눈다는 이외의 의미를
+        파악헐 수 없다.,
+        - 따라ㅏ서, 태그만 봤을때 태그의 목적을 알 수없기 때문에, id 또는 class를 반드시 추가해야 헸다.
+        ex)<div id="header"> ,div id='footer'>
+        - 시멘틱 태그를 사용하면 브라우저의 검색엔진이 페이지의 구조를 쉽게- 이해하거ㅗ, 페이지의 주요 콘턴체를 식별하는데 도움을 주기 때문에
+         검색엔진최적화에 도움이 된다.
+         
+         [시멘틱 태그]
+         header: 문서의 제목영역을 의미
+
+         footer:문서의 하단영역을 의미
+         nav : 네비게이션 역활의 링크 작성 영역
+         main : 현재 문서의 주된 콘텐츠 작성 영역
+         section : 구역 구문을 위한 영역
+         article(작은 토막): 본뮨과 독립된 콘텐츠를 작성하는 영역
+         aside: 사이드바 영역 
+    
+    -->
+         <div id="con">
+        <!--<div id="header"> --->
+            <header>
+            <div><img src="../resources/image/kh_logo.jpg"></div>
+            <div><input type="search" id="q" placeholder="검색어 입력해주세요 "></div>
+            <div></div>
+        </div>
+        
+        <div class="h2">
+            <div class="w1">공지사항</div>
+            <div class="w2">자유게시판</div>
+            <div class="w3">질물 게시판</div>
+            <div class="w4">FAQ</div>
+            <div class="w5">1:1 문의</div>
+            <div></div>
+        </div>
+
+        <div class="h3">
+            <div></div>
+            <div class="box">
+                <span>|</span>
+
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>copy</p>
+
+    </div>
+</body>
+</html>

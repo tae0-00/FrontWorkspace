@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function</h1>
+    <h2>함수작성</h2>
+    <script>
+
+        //함수선언식 -> 호이스팅 된다. 
+        function foo(){
+
+        }
+
+        // 함수표현삭-> 호이스팅 안됨
+        var bar= function(){};
+        bar();//함수표현식의 함수는 반드시 작성된 이후에 호출해야한다.
+
+        //즉시 실행함수(IIFF)
+        // -(IIFF) 겁나 긴 무언가의 약자 
+        //- 1회용 함수를 작설하고 싶을때 사용
+        //- (함수)();
+        (function(){
+            console.log('hello js')
+        })();
+
+        (function(){
+            console.log('bye js');
+        }());
+
+        (function(name){
+            console.log("hello"+name);
+        })('태경');
+
+    </script>
+    <h2> 매개변수 | 매개인자 </h2>
+    <input type="button" value="살향1" onclick="test1(1,2,3);">
+    <input type="button" value="살향2" onclick="test2();">
+
+    <script>
+
+        //매개변수(parameter) : 함수선언시 매개인자가 담길 공간
+        //매개인자(argument) : 함수 호출시 전달할 값
+        //자바슼트립에서는 매개변수와 매개인자릐 개숫가 달라도 문제 되지 않는다. 
+        function test1(x){
+            console.log("X=", x);//1만 받는거임 
+
+            //모든 함수들은 묵시적으로 argument배열을 가지고 임ㅅ다. 
+            console.log(arguments);
+        }
+        function test2(){
+        //매개인자의 합을 출력하는 add메서드는 작성
+        add(1,2,3,4,5,6,7,8,9,10);//55출력
+        add(12.34, 45.67);
+        add('a','b','c','d'); //"abcd"  출력
+        }
+
+        function add(add ){
+            var sum=0;
+            for(var i=0; i<arguments.length; i++){
+                sum+=arguments[i];
+            }
+            console.log(sum);
+        }
+        
+        
+    </script>
+    <h2>ㅎ함수 특징</h2>
+    <input type="button" value="return value" onclick="test3();">
+    <input type="button" value="충첩함수" onclick="test4();">
+  
+    <script>
+        //함수의 return구문이 옶거나 , return뒤쪽에 반환할 값이 없는 경우 undefindㅡㄹㄹ 반환
+        function test3(){
+            var k=koo();
+            console.log(k);
+        }
+        function koo(){
+            return 100; 
+        }
+        //a^2 +b^2=c^2;
+        function test4(a, b){
+            var c;
+            var power= function(n){
+                return n**2;
+            }
+            //** 지수 연산자(제곱)
+            c= Math.sqrt(power(a)+power(b));
+            console.log(c);
+        }
+    </script>
+    <h2>고급함수 </h2>
+    <input type="button" value="매개인자" onclick="test5();">
+    <input type="button" value="리턴값" onclick="test6();">
+    <input type="button" value="ㅁㅁ" onclick="">
+
+    <script>
+        /*
+        자바 스크립에서 함수는 "값"으로 취급된다.
+        1. 변수에 대입할수 있다
+        2. 함수의 매개인자로 전달될 수 있다.
+        3. 리턴값으로 사용할 수 있다. 
+        */
+       function test5(){
+        // 함수를 값으로 매개인자 전달하기
+        ezec(function(str){
+            console.log("hello"+str)
+        })
+       
+    }
+       var names= ['html,' ,'java', 'css', 'jqery']
+       function ezec(fn){
+        for( var i=0; i<names.length; i++){
+            fn(names[i]);
+        }
+       }
+       function test6(){
+        //함수를 리턴값으로 사용하기
+        var hello= returnF('hello');
+
+        hello('js');
+
+        returnF("goodbye")("js");
+
+       }
+       function returnF(say){
+        return function(name){
+            //var say= say; 가 자동으로 있음 closure에
+            console.log(say+" "+name);
+        }
+       }
+    
+    </script>
+    <h2>closure</h2>
+    <input type="button" value="globalCounter" onclick="test7();">
+    <input type="button" value="closureCounter1" onclick="test8();">
+    <input type="button" value="closureCounter2" onclick="test9();">
+
+    <script>
+        var cnt =0;// 전역변수(global/script scope)
+        function test7(){
+            //local scope(함수 내부의 스코프에 저장)
+            //debugger;
+            var a=0;
+            console.log("global"+ ++cnt);
+        }
+        /*
+            클로저(CLOSURE)
+            - 중첩함수에서 하위 함수가, 상위함수의 변수를 참조할때 생겨나는 스코프
+            - 하위 함수에서 상위함수의 변수값을 참조하는 경우, 하위함수의 CLOSURE 스코프에 변수ㅅ값을 추가한다.
+            - 클로저로 인해 , Stack메모리에서 상위함수의 메모리가 제거되더라도 상위함수의 변수를 그대로 가져다 사용할수 있다. 
+        */
+       function funcY(){
+        var num =100;
+        function funcz(){
+            //debugger;
+            console.log("num=" , num);
+
+        }
+        return funcz;
+       }
+       const myfn=funcY();
+       //myfn();
+
+       function makeClosurecount(){
+        var cnt=0;
+        return function(){
+            console.log('clourse : '+ ++cnt)
+        }
+       }
+       var test8=makeClosurecount();
+       var test9 =makeClosurecount();
+    //각 클로저 영역은 겹치지 않고 함수마다 고유하게 존재한다. 
+
+    </script>
+</body>
+</html>
